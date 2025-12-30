@@ -1,7 +1,7 @@
 const connectToMongoose = require("./db");
+const express = require('express')
 
 connectToMongoose()
-const express = require('express')
 const app = express()
 const port = 5000
 
