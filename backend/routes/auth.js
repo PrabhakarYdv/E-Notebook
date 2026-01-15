@@ -1,19 +1,41 @@
 const express = require("express")
 const router = express.Router()
-const { query, validationResult, body } = require('express-validator');
+const { validationResult, body } = require('express-validator');
+const User = require("../models/User");
 
 // Creating User
 
-router.get('/signup', [
+router.post('/signup', [
     body('name', "Name should be atleast 3 Character").isLength({ min: 3 }),
     body('email', "Enter a valid Email").isEmail(),
     body('password', "Password should be atleast 5 Character").isLength({ min: 5 }),
-], (req, res) => {
+], async (req, res) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() })
     }
-    res.send(req.body)
+
+
+    let user = User({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+    })
+
+    try {
+        let isRegisterd = await User.findOne({ email: req.body.email })
+        if (isRegisterd) {
+            return res.status(409).send({ error: "User already exists" })
+        }
+        await user.save()
+        res.status(200).send(user)
+
+    } catch (error) {
+        res.status(400).send({ error: error })
+    }
+
+
+
 })
 
 
