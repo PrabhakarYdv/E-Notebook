@@ -42,17 +42,64 @@ router.post('/signup', [
         if (isRegisterd) {
             return res.status(409).send({ error: "User already exists" })
         }
+
         await user.save()
         const authToken = jwt.sign(data, JWT_SECRET)
-        res.status(200).send({authToken:authToken})
+        res.status(200).send({ authToken: authToken })
 
     } catch (error) {
-        res.status(400).send({ error: error })
+        res.status(400).send({ error: error.message })
     }
 
 
 
 })
+
+
+// Login User
+
+router.post('/login', [
+    body('email', "Enter a valid Email").isEmail(),
+    body('password', "Password cannot be blank").notEmpty(),
+], async (req, res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+
+
+    const { email, password } = req.body
+
+    try {
+        let user = await User.findOne({ email })
+        if (!user) {
+            return res.status(400).send({ error: "Invalid Credential" })
+        }
+
+        const passwordCompare = await bcrypt.compare(password, user.password)
+        if (!passwordCompare) {
+            return res.status(400).send({ error: "Invalid Credential" })
+        }
+
+
+        const data = {
+            user: {
+                id: user.id
+            }
+        }
+
+        const authToken = jwt.sign(data, JWT_SECRET)
+        res.status(200).send({ authToken: authToken })
+
+
+
+    } catch (error) {
+        res.status(400).send({ error: error.message })
+    }
+
+})
+
+
 
 
 module.exports = router
