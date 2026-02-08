@@ -4,6 +4,7 @@ const { validationResult, body } = require('express-validator');
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const User = require("../models/User");
+const fetchUser = require("../middileware/fetchUser");
 
 const JWT_SECRET = "182ab1efb3cea0e1eeb5a866b0197a5b"
 
@@ -100,6 +101,23 @@ router.post('/login', [
 })
 
 
+// Get User
+
+router.post('/getuser', fetchUser, async (req, res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+    try {
+        const userId = req.user.id
+        const user = await User.findById(userId).select('-password')
+        res.send(user)
+    } catch (error) {
+        res.status(404).send(error.message)
+    }
+
+}
+)
 
 
 module.exports = router
