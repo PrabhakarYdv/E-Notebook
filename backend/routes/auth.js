@@ -80,17 +80,17 @@ router.post('/login', [
         if (!passwordCompare) {
             return res.status(400).send({ error: "Invalid Credential" })
         }
+        else {
 
-
-        const data = {
-            user: {
-                id: user.id
+            const data = {
+                user: {
+                    id: user.id
+                }
             }
+
+            const authToken = jwt.sign(data, JWT_SECRET)
+            res.status(200).send({ authToken: authToken })
         }
-
-        const authToken = jwt.sign(data, JWT_SECRET)
-        res.status(200).send({ authToken: authToken })
-
 
 
     } catch (error) {
