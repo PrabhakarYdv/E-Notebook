@@ -46,7 +46,7 @@ router.post('/addnote', fetchUser, [
     }
 })
 
-// Update any note of current user\
+// Update any note of current user
 
 router.put('/edit/:id', fetchUser, [
     body('title', "Enter a valid Title").isLength({ min: 3 }),
@@ -95,6 +95,33 @@ router.put('/edit/:id', fetchUser, [
 })
 
 // Delete any note of current user
+
+router.delete('/delete/:id', fetchUser, async (req, res) => {
+
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+
+    try {
+
+        let note = await Notes.findById(req.params.id)
+        if (!note) {
+            return res.status(400).send({ error: "Not found" })
+        }
+
+        if (note.user.toString() !== req.user.id) {
+            return res.status(401).send({ error: "Unauthorized Access" })
+        }
+
+        note = await Notes.findOneAndDelete(req.params.id)
+        res.json({ Success: "Note has been deleted" , note: note })
+
+    } catch (error) {
+        return res.status(500).send({ error: "Interal server error", message: error.message})
+
+    }
+})
 
 
 module.exports = router
