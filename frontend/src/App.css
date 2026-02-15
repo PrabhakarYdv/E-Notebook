@@ -5,63 +5,131 @@
     font-family: "Roboto", sans-serif;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px 0 0;
-    background: linear-gradient(to right, #8b3e3e, #ad7a65, #1a404a);
-    color: #FFFFFF;
-    max-height: 80px;
-    position: sticky;
-    top: 0;
+body {
+     background: linear-gradient(to right, #ffffff, #f1e7e2, #d3d5d6);
 }
 
-nav .left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px 0 0;
+        background: linear-gradient(to right, #8b3e3e, #ad7a65, #1a404a);
+        color: #FFFFFF;
+        max-height: 80px;
+        position: sticky;
+        top: 0;
+    }
 
-.logo {
-    height: 100px;
-    width: 100px;
-    cursor: pointer;
-}
+    nav .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
 
-nav .left h2 {
-    font-size: 40px;
-    cursor: pointer;
-    text-shadow: 5px 10px 5px #1a404a;
-    transition: 1s linear;
-}
+    .logo {
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+    }
 
-nav .left h2:hover {
-    scale: 1.2;
-}
+    nav .left h2 {
+        font-size: 40px;
+        cursor: pointer;
+        text-shadow: 5px 10px 5px #1a404a;
+        transition: 1s linear;
+    }
 
-nav .right ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
+    nav .left h2:hover {
+        scale: 1.2;
+    }
 
-nav .right ul li {
-    list-style: none;
-    font-size: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.5s linear;
-}
+    nav .right ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
 
-nav .right ul li:hover {
-    scale: 1.1;
-    color: #d3b09f;
-}
+    nav .right ul li {
+        list-style: none;
+        font-size: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.5s linear;
+    }
 
-nav .right ul li a {
-    text-decoration: none;
-    cursor: pointer;
-}
+    nav .right ul li:hover {
+        scale: 1.1;
+        color: #d3b09f;
+    }
+
+    nav .right ul li a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0 20px 0;
+        transition: 1s linear;
+    }
+
+
+
+    .hero h1 {
+        font-size: 70px;
+        font-weight: 900;
+        color: #208590;
+    }
+
+    .hero p {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .hero p span {
+        font-size: 25px;
+        font-weight: 500;
+        color: #ad7a65;
+    }
+
+    .hero .hero-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero .hero-btns button {
+        border: none;
+        outline: none;
+        padding: 20px 80px;
+        background-color: #000000;
+        color: #000000;
+        border-radius: 40px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.2);
+        transition: 0.5s linear;
+    }
+
+    .hero .hero-btns button.signup-btn {
+        background: linear-gradient(120deg, #ed7756, #e9ab3f, #ff6a00);
+    }
+
+    .hero .hero-btns button.login-btn {
+        background: linear-gradient(120deg, #4e7f5f, #3fe9e1, #2469ca);
+    }
+
+    .hero .hero-btns button:hover {
+        transform: matrix(1, 0, 0, 1, 0, -5);
+        box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.4);
+    }
