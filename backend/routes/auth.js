@@ -95,7 +95,7 @@ router.post('/login', [
 
 
     } catch (error) {
-        res.status(400).send({ error: error.message })
+       return res.status(400).send({ error: error.message })
     }
 
 })
@@ -111,13 +111,12 @@ router.post('/getuser', fetchUser, async (req, res) => {
     try {
         const userId = req.user.id
         const user = await User.findById(userId).select('-password')
-        res.send(user)
+        return res.send(user)
     } catch (error) {
-        res.status(404).send(error.message)
+        return res.status(404).send(error.message)
     }
 
-}
-)
+})
 
 
 module.exports = router
