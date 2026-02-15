@@ -6,7 +6,10 @@
 }
 
 body {
-     background: linear-gradient(to right, #ffffff, #f1e7e2, #d3d5d6);
+     background: linear-gradient(to right, #ffffff, #eeeded, #def1f9);
+     /* background: linear-gradient(to right, #000000, #0c0c0c, #353636); */
+     /* transition: 1s linear; */
+     /* color: #FFFFFF; */
 }
 
     nav {
