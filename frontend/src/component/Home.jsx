@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImage from '../assets/hero.gif'
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -15,8 +16,8 @@ function Home() {
                 </p>
 
                 <div className="hero-btns">
-                    <button className="signup-btn" type="button">Signup</button>
-                    <button  className="login-btn" type="button">Login</button>
+                    <Link to={"/signup"}><button className="signup-btn" type="button">Signup</button></Link>
+                    <Link to={"/login"}><button  className="login-btn" type="button">Login</button></Link>
                 </div>
             </div>
         </>
