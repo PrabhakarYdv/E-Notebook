@@ -22,6 +22,7 @@ nav {
     max-height: 80px;
     position: sticky;
     top: 0;
+    overflow: hidden;
 }
 
 nav .left {
@@ -31,11 +32,10 @@ nav .left {
     gap: 10px;
 }
 
-.logo {
-    height: 100px;
-    width: 100px;
+/* nav .left img {
     cursor: pointer;
-}
+    padding: 5px;
+} */
 
 nav .left h2 {
     font-size: 40px;
@@ -76,9 +76,21 @@ nav .right ul li a {
     transition: 0.5s linear;
 }
 
+nav .right ul li a.active {
+
+    padding: 5px 15px;
+    background: linear-gradient(120deg, #de6856, #d77158, #df6a89);
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+
 nav .right ul li a:hover {
-    font-size: 85px;
+    font-size: 50px;
     color: #d3b09f;
+    background-color: transparent;
+    background: transparent;
+    padding: 0;
 }
 
 .hero {
@@ -207,10 +219,10 @@ nav .right ul li a:hover {
     margin-left: 50px;
 }
 
-.about_content p span{
-   font-weight: bold;
+.about_content p span {
+    font-weight: bold;
 }
 
-.about_sub_heading{
+.about_sub_heading {
     margin: 20px;
 }

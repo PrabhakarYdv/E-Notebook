@@ -11,7 +11,7 @@ function AppRoutes() {
       <Route exact path="/" element={<Home />} />
       <Route exact path="/home" element={<Home />} />
       <Route exact path="/about" element={<About/>} />
-      <Route exact path="/loign" element={<Login/>} />
+      <Route exact path="/login" element={<Login/>} />
       <Route exact path="/signup" element={<Signup/>} />
     </Routes>
   )
