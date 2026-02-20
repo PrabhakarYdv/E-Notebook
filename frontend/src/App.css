@@ -44,7 +44,7 @@ nav .left h2 {
     transition: 1s linear;
 }
 
-nav .left  a{
+nav .left a {
     text-decoration: none;
     color: #FFFFFF;
 }
@@ -143,4 +143,74 @@ nav .right ul li a:hover {
 .hero .hero-btns button:hover {
     transform: matrix(1.05, 0, 0, 1.05, 0, -5);
     box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*   ----------------------------  About Page ----------------------------   */
+
+.about_heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_heading h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: #a96a44;
+}
+
+.about_heading img {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    transform: translateY(-15px);
+}
+
+.about_description {
+    margin: 15px;
+    text-align: center;
+}
+
+.about_description p {
+    font-size: 18px;
+}
+
+.about_description p span {
+    color: #a96a44;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.taskAnimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+}
+
+.about_content h4 {
+    font-size: 25px;
+
+}
+
+.about_content p {
+    font-size: 16px;
+    margin-left: 50px;
+}
+
+.about_content p span{
+   font-weight: bold;
+}
+
+.about_sub_heading{
+    margin: 20px;
 }
