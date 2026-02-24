@@ -226,3 +226,72 @@ nav .right ul li a:hover {
 .about_sub_heading {
     margin: 20px;
 }
+
+.signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #ffffff, #96cfe2, #083d4b);
+    background-size: 200% 200%;
+    animation: moveGraident 40s ease-in-out infinite;
+}
+
+.signup_box {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: transparent; */
+    color: #FFFFFF;
+    padding: 20px;
+    height: 90vh;
+    width: 80vw;
+    overflow: auto;
+    border-radius: 10px;
+    /* box-shadow:2px 2px 2px  rgba(0, 0, 0, 0.4) */
+}
+
+.signup_box::-webkit-scrollbar {
+    display: none;
+}
+
+.signup_box .left {
+    background-color: #000000;
+    height: 80vh;
+    width: 50vw;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 10px;
+    box-shadow:2px 2px 2px  rgba(0, 0, 0, 0.4)
+}
+
+.signup_box .right {
+    background-color: #ffffff;
+    height: 80vh;
+    width: 50vw;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    box-shadow:2px 2px 2px  rgba(0, 0, 0, 0.4)
+}
+
+@keyframes moveGraident {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 100%;
+    }
+
+    50% {
+        background-position: 200% 200%;
+
+    }
+    75% {
+        background-position: 100% 100%;
+
+    }
+
+    100% {
+       background-position: 0% 0%;
+
+    }
+}
