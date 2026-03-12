@@ -282,7 +282,7 @@ nav .right ul li a:hover {
     color: #ffffff;
 }
 
-.signup_box .left h1 span{
+.signup_box .left h1 span {
     font-size: 40px;
     color: #b45d1a;
 }
@@ -313,8 +313,12 @@ nav .right ul li a:hover {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     color: #000000;
     gap: 10px;
+    overflow: auto;
 }
 
+.signup_box .right::-webkit-scrollbar {
+    display: none;
+}
 
 .signup_box .right img {
     height: 120px;
@@ -384,7 +388,176 @@ nav .right ul li a:hover {
 }
 
 
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #ffffff, #96cfe2, #083d4b);
+    background-size: 200% 200%;
+    animation: moveGraident 10s ease-in-out infinite;
+}
 
+.login_box {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: transparent; */
+    color: #FFFFFF;
+    padding: 20px;
+    height: 90vh;
+    width: 80vw;
+    overflow: hidden;
+    border-radius: 10px;
+    /* box-shadow:2px 2px 2px  rgba(0, 0, 0, 0.4) */
+}
+
+.login_box::-webkit-scrollbar {
+    display: none;
+}
+
+.login_box .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background: linear-gradient(120deg,#b31fb3, #e6841c); */
+    background: linear-gradient(120deg, #b15fa0, #9c1e1e);
+    background-size: 150% 150%;
+    height: 80vh;
+    width: 50vw;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    /* border: 1px solid gray; */
+    transition: 1s;
+    animation: moveGraident2 5s ease-in-out infinite;
+}
+
+.login_box .left img {
+    height: 150px;
+    width: 150px;
+}
+
+.login_box .left h1 {
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.login_box .left h1 span {
+    font-size: 40px;
+    color: #63c1dc;
+}
+
+.login_box .left p {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 25px;
+    margin: 20px;
+}
+
+.login_box .left p span {
+    font-size: 30px;
+    color: #63c1dc;
+    font-weight: bold;
+}
+
+.login_box .right {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 80vh;
+    width: 50vw;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 10%;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    color: #000000;
+    gap: 10px;
+    overflow: auto;
+}
+
+.login_box .right::-webkit-scrollbar {
+    display: none;
+}
+
+
+.login_box .right img {
+    height: 120px;
+    width: 120px;
+    margin-top: 15px;
+}
+
+.login_box .right form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.login_box .right form input {
+    width: 350px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    /* border: none; */
+    border: 2px solid gray;
+    outline: none;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    /* border-top-right-radius: 100px; */
+}
+
+.login_box .right form #forgot_password {
+    min-width: 100%;
+    cursor: pointer;
+    color: #f34646;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.login_box .right form button {
+    background: linear-gradient(to right, #ac0965, #da4b3b, #e8a42e);
+    color: #FFFFFF;
+    background-size: 300% 300%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 40px;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    animation: buttonMoveGraident 5s ease-in-out infinite;
+    transition: 1s;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.login_box .right form button:hover {
+    background: linear-gradient(to right, #eae8e9, #c0eaf1, #cfcecc);
+    background-size: 300% 300%;
+    color: #000000;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    transform: scale(1.2);
+    animation: buttonMoveGraident 5s ease-in-out infinite;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.login_box .right p {
+    color: gray;
+    font-size: 12px;
+
+}
+
+.login .right p span {
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 2px;
+    color: #da4b3b;
+    font-weight: bold;
+}
 
 
 
@@ -418,7 +591,8 @@ nav .right ul li a:hover {
     }
 }
 
-@keyframes buttonMoveGraident2 {
+
+@keyframes buttonMoveGraident {
     0% {
         background-position: 0% 0%;
     }
@@ -443,7 +617,7 @@ nav .right ul li a:hover {
     }
 }
 
-@keyframes buttonMoveGraident {
+@keyframes moveGraident2 {
     0% {
         background-position: 0% 0%;
     }
