@@ -21,7 +21,7 @@ function About() {
       <div className="about_content">
         <div className="about_sub_heading">
           <h4>✨ What We Offer</h4>
-          <div className="about_sub_heading_description">
+          <div className="about_sub_heading_description" style={{backgroundColor:"#e8d4d4"}}>
             <p><span>Secure Login & Signup</span> - Personal accounts to keep your data private and protected.</p>
             <p><span>Cloud-Based Access</span> - Access your notes anytime, from any device.</p>
             <p><span>Smart Organization</span> - Filter notes by tags and priority (Low, Medium, High).</p>
@@ -32,7 +32,7 @@ function About() {
 
          <div className="about_sub_heading">
           <h4>🚀 Objective</h4>
-          <div className="about_sub_heading_description">
+          <div className="about_sub_heading_description" style={{backgroundColor:"#d5e8ef"}}>
             <p>E-NoteBook aims to combine user-friendly design with strong backend architecture, enabling secure,
              device-independent access to personal notes while maintaining performance and scalability standards.</p>
           </div>
@@ -41,14 +41,14 @@ function About() {
 
         <div className="about_sub_heading">
           <h4>🎯 Our Mission</h4>
-          <div className="about_sub_heading_description">
+          <div className="about_sub_heading_description" style={{backgroundColor:"#c0e2ce"}}>
             <p>To provide a secure, simple, and powerful cloud notebook that helps individuals stay organized without compromising privacy.</p>
           </div>
         </div>
 
         <div className="about_sub_heading">
           <h4>🌍 Our Vision</h4>
-          <div className="about_sub_heading_description">
+          <div className="about_sub_heading_description" style={{backgroundColor:"#f6efd1"}}>
             <p>We aim to build a reliable digital companion that empowers users to manage ideas,
               tasks, and information seamlessly across devices — securely and efficiently.</p>
             <p><span>Secure. Accessible. Organized.</span></p>
